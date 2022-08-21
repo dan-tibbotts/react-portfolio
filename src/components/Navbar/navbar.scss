@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+nav {
+  display: grid;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  transition: 400ms ease-in;
+
+  .nav-menu {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 0.5rem 0rem;
+
+    a {
+      padding: 0.25rem 0.5rem;
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      border-bottom: solid 2px inherit;
+      margin-right: 0.5rem;
+
+      &:hover {
+        border-bottom: solid 2px $color-accent;
+      }
+
+    }
+  }
+}
+
+.nav-bg {
+  background-color: $color-primary;
+}
