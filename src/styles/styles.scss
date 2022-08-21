@@ -17,6 +17,7 @@
 
 body {
   background-color: rgb(220, 220, 220);
+  background-color: rgb(255, 255, 255);
 }
 
 p {
@@ -47,6 +48,10 @@ section {
 
 .mt2{
   margin-top: 2rem;
+}
+
+.i {
+  font-style: italic;
 }
 
 .sub-heading {
@@ -103,6 +108,7 @@ section {
   max-width: 1000px;
   background-color: white;
   border: solid 1px lightgray;
+  border: none;
 
 }
 
