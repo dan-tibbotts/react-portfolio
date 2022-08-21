@@ -1,0 +1,131 @@
+@import "./variables";
+@import "./mixins";
+
+// Component Styles
+@import "../components/Hero/hero";
+@import "../components/Projects/projects";
+
+// General Styles
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: rgb(220, 220, 220);
+}
+
+p {
+  color: $color-text;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  color: $color-primary;
+  font-weight: 900;
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+h2 {
+  color: $color-text;
+  font-weight: 900;
+}
+
+h3 {
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+section {
+  padding: 2rem;
+}
+
+.mt2{
+  margin-top: 2rem;
+}
+
+.sub-heading {
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+// Button Styles
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: ease 300ms;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+.btn-primary {
+  background: $color-accent;
+  color: white;
+
+  &:hover {
+    background: $color-accent-trans;
+    border: solid 1px $color-accent;
+    background: white;
+    color: $color-accent;
+  }
+}
+
+.btn-secondary {
+  background-color: white;
+  border: solid 1px $color-accent;
+  color: $color-accent;
+
+  &:hover {
+    background: $color-accent;
+    border: solid 1px $color-accent-trans;
+    color: white;
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: 1000px;
+  background-color: white;
+  border: solid 1px lightgray;
+
+}
+
+// Tablet
+@media screen and (max-width: $tablet-breakpoint) {
+  section {
+    padding: 1rem;
+  }
+}
+
+// Mobile
+@media screen and (max-width: $mobile-breakpoint) {
+
+  h1 {
+    text-align: center;
+  }
+
+  .sub-heading {
+    text-align: center;
+  }
+
+  .section {
+    padding: 0.2rem;
+  }
+
+}

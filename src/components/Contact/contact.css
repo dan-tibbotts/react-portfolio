@@ -1,0 +1,102 @@
+#contact {
+  padding: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.contact-grid .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-grid .contact-form .contact-field {
+  display: flex;
+  flex-direction: column;
+}
+.contact-grid .contact-form .contact-field label {
+  font-weight: 600;
+}
+.contact-grid .contact-form .contact-field .text-input {
+  border: solid 1px rgb(172, 172, 172);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.1rem;
+  width: 100%;
+  background-color: #fff;
+}
+.contact-grid .contact-form .contact-field textarea {
+  height: 120px;
+}
+.contact-grid .contact-form .contact-field .error-label {
+  color: red;
+  margin: 0;
+}
+.contact-grid .contact-form .contact-field .error-field {
+  background-color: rgba(255, 0, 0, 0.053);
+  color: red;
+  border: solid 1px red;
+}
+.contact-grid .contact-form .message-success {
+  background-color: rgba(0, 128, 0, 0.071);
+  box-shadow: 0 0 3px rgba(0, 128, 0, 0.23);
+  margin: 0.5rem 0;
+}
+.contact-grid .contact-form .message-success p {
+  color: green;
+  padding: 0.75rem;
+}
+.contact-grid .contact-form .contact-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.contact-grid .contact-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.contact-grid .contact-panel .contact-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  background-color: #eee;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 5px #eee;
+  text-align: center;
+}
+.contact-grid .contact-panel .contact-details div a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #310e63;
+}
+.contact-grid .contact-panel .contact-details div a:hover {
+  text-decoration: underline;
+}
+.contact-grid .contact-panel .contact-details div div {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 820px) {
+  #contact {
+    padding: 3rem;
+  }
+  .contact-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  #contact {
+    padding: 1rem;
+  }
+  .contact-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+
+.about-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  justify-content: center;
+  align-items: center;
+
+  .panel-2 {
+    display: flex;
+    justify-content: center;
+
+    .about-img {
+      width: 80%;
+    }
+
+  }
+
+  
+
+
+}
+
+
+// Tablet
+@media screen and (max-width: $tablet-breakpoint) {
+
+  #about {
+    padding: 3rem;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    .panel-2 {
+
+      .about-img {
+        width: 100%;
+      }
+
+    }
+    
+  }
+
+
+}
+
+// Mobile
+@media screen and (max-width: $mobile-breakpoint) {
+
+  #about {
+    padding: 1rem;
+  }
+
+  .about-grid {
+    padding: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    .panel-1 {
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .panel-2{
+      order: 1;
+      
+    }
+  }
+}

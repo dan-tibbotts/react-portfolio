@@ -1,0 +1,144 @@
+@import "../../styles/variables";
+
+#contact {
+  padding: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 600;
+      }
+
+      .text-input {
+        border: solid 1px rgb(172, 172, 172);
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1.1rem;
+        width: 100%;
+        background-color: #fff;
+      }
+
+      textarea {
+        height: 120px;
+      }
+
+      .error-label {
+        color: red;
+        margin: 0;
+      }
+
+      .error-field {
+        background-color: rgba(255, 0, 0, 0.053);
+        color: red;
+        border: solid 1px red;
+      }
+
+
+    }
+
+    .message-success {
+      background-color: rgba(0, 128, 0, 0.071);
+      box-shadow: 0 0 3px rgba(0, 128, 0, 0.23);
+      margin: 0.5rem 0;
+
+      p{
+        color: green;
+        padding: 0.75rem;
+        
+      }
+
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+  }
+
+  .contact-panel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      background-color: #eee;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 1px 1px 5px #eee;
+      text-align: center;
+
+
+      div a {
+        font-size: 1.0rem;
+        text-decoration: none;
+        color: $color-primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+      }
+
+      div div  {
+        font-weight: 600;
+      }
+    }
+
+  }
+
+
+}
+
+// Tablet
+@media screen and (max-width: $tablet-breakpoint) {
+  #contact {
+    padding: 3rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr auto;
+  }
+}
+
+// Mobile
+@media screen and (max-width: $mobile-breakpoint) {
+  #contact {
+    padding: 1rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    // .contact-panel {
+
+    //   .contact-details {
+    //     text-align: center;
+    //   }
+
+    // }
+
+  }
+
+}
