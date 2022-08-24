@@ -14,7 +14,7 @@ const Hero = () => {
 
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">Projects</a> 
-            <a href="#projects" className="btn btn-secondary">Contact Me</a> 
+            <a href="#contact" className="btn btn-secondary">Contact Me</a> 
           </div>
           
         </div>
