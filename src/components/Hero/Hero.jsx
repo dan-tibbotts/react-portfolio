@@ -11,6 +11,12 @@ const Hero = () => {
           <span id="hero-text">
             Providing real world solutions for real life problems
           </span>
+
+          <div className="hero-cta">
+            <a href="#projects" className="btn btn-primary">Projects</a> 
+            <a href="#projects" className="btn btn-secondary">Contact Me</a> 
+          </div>
+          
         </div>
         <div className="hero-image-container">
           <img id="hero-image" src={HeroImage} />
