@@ -5,10 +5,9 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 99;
-  transition: 400ms ease-in;
+  transition: 300ms ease-in;
 
   .nav-menu {
-    
     display: flex;
     flex-direction: row;
     justify-content: end;
@@ -33,3 +32,4 @@ nav {
 .nav-bg {
   background-color: $color-primary;
 }
+

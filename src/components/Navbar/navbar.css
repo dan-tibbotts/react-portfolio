@@ -3,7 +3,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 99;
-  transition: 400ms ease-in;
+  transition: 300ms ease-in;
 }
 nav .nav-menu {
   display: flex;

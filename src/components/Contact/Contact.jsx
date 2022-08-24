@@ -1,5 +1,6 @@
 import "./contact.css";
 import { useState, useEffect, useRef } from "react";
+import emailJS from "@emailjs/browser";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -14,8 +15,9 @@ const Contact = () => {
   const [messageError, setMessageError] = useState("");
   const messageRef = useRef(null);
 
-  const [errors, setErrors] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
+
+  const formRef = useRef();
 
   const nameChange = (val) => {
     resetNameErrors();
@@ -32,8 +34,9 @@ const Contact = () => {
     setMessage(val);
   };
 
-  const validateForm = () => {
-    setErrors(false); // reset error flag
+  const isFormValid = () => {
+    let errors = false;
+
     resetNameErrors();
     resetEmailErrors();
     resetMessageErrors();
@@ -42,14 +45,14 @@ const Contact = () => {
     if (!name) {
       setNameError("Please enter your name");
       nameRef.current.className = "text-input error-field";
-      setErrors(true);
+      errors = true;
     }
 
     // Validate Email
     if (!email) {
       setEmailError("Please enter an email address");
       emailRef.current.className = "text-input error-field";
-      setErrors(true);
+      errors = true;
     } else if (
       !email.match(
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -57,28 +60,51 @@ const Contact = () => {
     ) {
       setEmailError("Email must be an email format");
       emailRef.current.className = "text-input error-field";
-      setErrors(true);
+      errors = true;
     }
 
     // Validate Message
     if (!message) {
       setMessageError("Looks like you forgot to add a message");
       messageRef.current.className = "text-input error-field";
-      setErrors(true);
+      errors = true;
     }
 
-    if (!errors) {
-      sendMessage();
+    if (errors) {
+      return false;
+    } else {
+      return true;
     }
   };
 
-  const sendMessage = () => {
-    setMessageSent(true);
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    if (isFormValid()) {
+      emailJS
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          formRef.current,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            setMessageSent(true);
+            setName("");
+            setEmail("");
+            setMessage("");
+            setMessageError("");
+          },
+          (error) => {
+            setMessageError(error.text);
+          }
+        );
+    }
   };
 
   const resetForm = () => {
     setMessageSent(false);
-    setErrors(false);
 
     resetNameErrors();
     resetEmailErrors();
@@ -114,16 +140,16 @@ const Contact = () => {
       </p>
       <div className="contact-grid">
         {/* Panel 1 */}
-        <div className="contact-form">
+        <form className="contact-form" ref={formRef} onSubmit={sendMessage}>
           {/* Name */}
           <div className="contact-field">
-            <label htmlFor="name">Your Name</label>
+            <label>Your Name</label>
             {nameError ? <p className="error-label">{nameError}</p> : null}
             <input
               className="text-input"
               type="text"
               id="name"
-              name="name"
+              name="user_name"
               value={name}
               ref={nameRef}
               onChange={(e) => nameChange(e.target.value)}
@@ -133,13 +159,13 @@ const Contact = () => {
 
           {/* Email */}
           <div className="contact-field">
-            <label htmlFor="email">Email</label>
+            <label>Email</label>
             {emailError ? <p className="error-label">{emailError}</p> : null}
             <input
               className="text-input"
               type="email"
               id="email"
-              name="email"
+              name="user_email"
               value={email}
               ref={emailRef}
               onChange={(e) => emailChange(e.target.value)}
@@ -149,7 +175,7 @@ const Contact = () => {
 
           {/* Message */}
           <div className="contact-field">
-            <label htmlFor="message">Message</label>
+            <label>Message</label>
             {messageError ? (
               <p className="error-label">{messageError}</p>
             ) : null}
@@ -166,11 +192,13 @@ const Contact = () => {
 
           {/* Buttons */}
           <div className="contact-buttons">
-            <button className="btn btn-primary" onClick={() => validateForm()}>
-              Send
-            </button>
+            <button className="btn btn-primary">Send</button>
 
-            <button className="btn btn-secondary" onClick={() => resetForm()}>
+            <button
+              type="reset"
+              className="btn btn-secondary"
+              onClick={() => resetForm()}
+            >
               Reset Form
             </button>
           </div>
@@ -183,7 +211,7 @@ const Contact = () => {
               </p>
             </div>
           ) : null}
-        </div>
+        </form>
 
         {/* Panel 2 */}
         <div className="contact-panel">

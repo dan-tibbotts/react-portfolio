@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="footer-contact">
             <p className="footer-heading">Daniel Tibbotts</p>
             <p>
-              <i class="fa-solid fa-location-dot"></i>
+              <i className="fa-solid fa-location-dot"></i>
               &nbsp;
               <a
                 href="https://en.wikipedia.org/wiki/Christchurch"

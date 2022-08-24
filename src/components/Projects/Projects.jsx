@@ -13,8 +13,12 @@ const Projects = () => {
   return (
     <section id="projects">
       <h1>Projects</h1>
-      <p className="sub-heading">
-        Interested in seeing what I have done? Check out some of my projects below!
+      <p className="sub-heading">Interested in seeing what I have done?</p>
+      <p>
+        The projects below are a small representation of work completed through
+        my studies. It does not include all my projects. If you have a specific
+        need or would like to discuss developing a project using a language or
+        framework not listed below <a href="contact">contact Me</a> to discuss.
       </p>
       <div className="project-grid">
         <ProjectCard
