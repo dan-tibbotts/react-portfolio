@@ -72,16 +72,18 @@
 
   .contact-panel {
     display: flex;
-    align-items: center;
     width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 1rem;
 
     .contact-details {
       display: flex;
       flex-direction: column;
       width: 100%;
-      gap: 0.5rem;
+      gap:1rem;
       background-color: #eee;
-      padding: 1rem 2rem;
+      padding: 2rem 0.5rem;
       border-radius: 0.5rem;
       box-shadow: 1px 1px 5px #eee;
       text-align: center;
@@ -105,26 +107,26 @@
 
   }
 
-
 }
 
 // Tablet
 @media screen and (max-width: $tablet-breakpoint) {
   #contact {
-    padding: 3rem;
+    padding: 5rem 3rem;
   }
 
   .contact-grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 2fr auto;
+    grid-template-columns: 2fr 1fr;
+
   }
 }
 
 // Mobile
 @media screen and (max-width: $mobile-breakpoint) {
   #contact {
-    padding: 1rem;
+    padding: 5rem 1rem;
   }
 
   .contact-grid {
@@ -132,13 +134,6 @@
     gap: 1rem;
     grid-template-columns: repeat(1, 1fr);
 
-    // .contact-panel {
-
-    //   .contact-details {
-    //     text-align: center;
-    //   }
-
-    // }
 
   }
 

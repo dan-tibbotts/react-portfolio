@@ -69,9 +69,9 @@
   transform: scale(1.01);
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 830px) {
   #projects {
-    padding: 3rem;
+    padding: 5rem 3rem;
     border-radius: 0;
   }
   .project-grid {
@@ -81,7 +81,7 @@
 }
 @media screen and (max-width: 500px) {
   #projects {
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
     border-radius: 0;
   }
   .project-grid {

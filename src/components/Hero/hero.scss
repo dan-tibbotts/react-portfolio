@@ -21,7 +21,7 @@
     font-size: 5rem;
     font-weight: 900;
     text-shadow: 1px 1px 1px #000000;
-    line-height: .85;
+    line-height: 0.85;
     margin-bottom: 2rem;
   }
 
@@ -30,7 +30,7 @@
     color: $color-accent;
     font-size: 3rem;
     font-weight: 500;
-    line-height: .9;
+    line-height: 0.9;
   }
 
   #hero-text {
@@ -44,11 +44,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    gap: 2rem;
 
-  #hero-image {
-    display: block;
-    width: 60%;
+    #hero-image {
+      display: block;
+      width: 90%;
+    }
   }
 
   .hero-cta {
@@ -64,22 +65,39 @@
     flex-direction: column;
     text-align: center;
 
-    #hero-title {
-      font-size: 4.9rem;
+    .hero-panel {
+      order: 2;
+      padding: 4rem 1rem;
+
+      #hero-title {
+        font-size: 4.9rem;
+      }
+
+      #hero-subtitle {
+        font-size: 3.3rem;
+      }
+
+      #hero-text {
+        font-size: 1.7rem;
+      }
+
+      .hero-cta {
+        justify-content: center;
+        align-items: center;
+      }
     }
 
-    #hero-subtitle {
-      font-size: 3.3rem;
-    }
+    .hero-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
 
-    #hero-text {
-      font-size: 1.7rem;
-    }
-
-    #hero-image {
-      width: 80%;
-      padding: 3.3rem;
-      margin-top: 5rem;
+      #hero-image {
+        width: 80%;
+        padding: 3.3rem;
+        margin-top: 5rem;
+      }
     }
   }
 }
@@ -90,19 +108,30 @@
     flex-direction: column;
     text-align: center;
 
-    #hero-title {
-      font-size: 4.0rem;
+    .hero-panel {
+      #hero-title {
+        font-size: 4rem;
+      }
+
+      #hero-subtitle {
+        font-size: 2rem;
+      }
+
+      #hero-text {
+        font-size: 1.5rem;
+      }
+
+      #hero-image {
+        display: none;
+      }
+
+      .hero-cta {
+        justify-content: center;
+        align-items: center;
+      }
     }
 
-    #hero-subtitle {
-      font-size: 2.0rem;
-    }
-
-    #hero-text {
-      font-size: 1.5rem;
-    }
-
-    #hero-image {
+    .hero-image-container {
       display: none;
     }
   }
