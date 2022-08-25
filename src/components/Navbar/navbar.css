@@ -8,21 +8,43 @@ nav {
 nav .nav-menu {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-evenly;
   margin: 0.5rem 0rem;
 }
-nav .nav-menu a {
+nav .nav-menu .nav-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
   padding: 0.25rem 0.5rem;
   text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  border-bottom: solid 2px inherit;
-  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  transition: 300ms ease-in-out;
 }
-nav .nav-menu a:hover {
-  border-bottom: solid 2px #e62143;
+nav .nav-menu .nav-menu-item i {
+  font-size: 1.25rem;
 }
 
 .nav-bg {
   background-color: #310e63;
+}
+
+@media screen and (max-width: 830px) {
+  nav .nav-menu .nav-menu-item {
+    font-size: 0.8;
+  }
+}
+@media screen and (max-width: 500px) {
+  nav .nav-menu {
+    justify-content: space-evenly;
+  }
+  nav .nav-menu .nav-menu-item {
+    font-size: 0.7;
+  }
+  nav .nav-menu .nav-menu-item i {
+    font-size: 1.5rem;
+  }
+  nav .nav-menu span {
+    display: none;
+  }
 }/*# sourceMappingURL=navbar.css.map */
